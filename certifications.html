@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates | Portfolio</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #000;
+            overflow-x: hidden;
+        }
+        
+        /* Layout */
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .left-side {
+            width: 50%;
+            padding: 4rem;
+            position: relative;
+        }
+        
+        .right-side {
+            width: 50%;
+            padding: 4rem;
+            background-color: #fff;
+            position: relative;
+        }
+        
+        /* Typography */
+        h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            line-height: 1;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        /* Certification card */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .cert-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cert-card .badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #000;
+            color: #fff;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            border-radius: 0 0 0 8px;
+        }
+        
+        .cert-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .cert-card .issuer {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cert-card .date {
+            color: #999;
+            font-size: 0.8rem;
+        }
+        
+        .cert-card .link-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #000;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .cert-card .link-btn:hover {
+            background-color: #000;
+            color: #fff;
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            left: 2rem;
+            top: 2rem;
+            z-index: 100;
+        }
+        
+        .nav a {
+            color: #000;
+            text-decoration: none;
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+        
+        /* Contact button */
+        .contact-btn {
+            position: fixed;
+            right: 2rem;
+            bottom: 2rem;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: bold;
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .left-side, .right-side {
+                width: 100%;
+                padding: 2rem;
+            }
+            
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <a href="index.html" class="contact-btn">Back to Portfolio</a>
+    
+    <div class="container">
+        <div class="left-side">
+            <h1>Certificates</h1>
+            <p>A showcase of my technical skills and professional achievements validated through industry-recognized certifications.</p>
+        </div>
+        
+        <div class="right-side">
+            <div class="cert-grid">
+                <!-- You can duplicate these cards for each certification -->
+                <div class="cert-card">
+                    <div class="badge">2024</div>
+                    <h3>AWS Certified Solutions Architect</h3>
+                    <div class="issuer">Amazon Web Services</div>
+                    <p>Expertise in designing distributed systems on AWS, focusing on scalability, security, and reliability.</p>
+                    <div class="date">Issued: March 2024 • Expires: March 2027</div>
+                    <a href="#" class="link-btn">View credential</a>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="badge">2023</div>
+                    <h3>Google Professional Cloud Developer</h3>
+                    <div class="issuer">Google Cloud</div>
+                    <p>Capabilities in building and deploying scalable applications using Google Cloud services.</p>
+                    <div class="date">Issued: November 2023 • Expires: November 2025</div>
+                    <a href="#" class="link-btn">View credential</a>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="badge">2023</div>
+                    <h3>Certified Ethical Hacker (CEH)</h3>
+                    <div class="issuer">EC-Council</div>
+                    <p>Skilled in identifying vulnerabilities in systems and performing security assessments.</p>
+                    <div class="date">Issued: July 2023 • Expires: July 2026</div>
+                    <a href="#" class="link-btn">View credential</a>
+                </div>
+                
+                <div class="cert-card">
+                    <div class="badge">2022</div>
+                    <h3>TensorFlow Developer Certificate</h3>
+                    <div class="issuer">Google</div>
+                    <p>Proficiency in building and training neural networks for various machine learning applications.</p>
+                    <div class="date">Issued: October 2022 • No Expiration</div>
+                    <a href="#" class="link-btn">View credential</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

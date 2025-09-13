@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #lottie-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: white;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #main-content {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Lottie Animation -->
+  <div id="lottie-container"></div>
+
+  <!-- Your actual page content -->
+  <div id="main-content">
+    <h1>Welcome to My Website</h1>
+    <p>This is the real page content.</p>
+  </div>
+
+  <script>
+    const animation = lottie.loadAnimation({
+      container: document.getElementById('lottie-container'),
+      renderer: 'svg',
+      loop: false,
+      autoplay: true,
+      path: 'Tracesign.json' // Replace with your file path
+    });
+
+    animation.addEventListener('complete', function () {
+      document.getElementById('lottie-container').style.display = 'none';
+      document.getElementById('main-content').style.display = 'block';
+      document.body.style.overflow = 'auto'; // Re-enable scrolling if needed
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" type="x-icon" href="testtab.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Rauls Portfolio</title>
+    <meta name="description" content="A dynamic portfolio showcasing my work.">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:url" content="raulmalik.com">
+    <meta property="og:title" content="Rauls - Portfolio">
+    <meta property="og:discription" content="A dynamic portfolio showcasing my work.">
+    <meta property="og:site_name" content="Rauls Portfolio" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="ogmedia.png">
+
+    <link rel="canonical" href="https://raulmalik.com">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="assets/css/normalize.css" rel="stylesheet">
+    <link href="assets/css/uikit.min.css" rel="stylesheet">
+    <link href="assets/css/styleguide.css" rel="stylesheet">
+    <link href="assets/css/style-v2.css" rel="stylesheet">
+
+    <style>
+        .about {
+            position: relative;
+            opacity: 0.4;
+        }
+
+        .about .overlay {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 146%;
+            background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 255, 255, 0.8), rgb(255, 255, 255, 0.6), rgb(255, 255, 255, 0.55), rgb(255, 255, 255, 0.45), rgb(255, 255, 255, 0));
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .about-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 2.7rem 0 2rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            font-family: Neue Montreal, sans-serif;
+            color: var(--primary);
+            font-size: 1.1em;
+            line-height: 1;
+            font-weight: 400;
+
+        }
+
+        .resume-text p {
+            font-size: 1em;
+        }
+
+        .resume-text p strong {
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .stock-text {
+            width: 30%;
+
+        }
+
+        .resume-text {
+            width: 29%;
+        }
+
+        @media screen and (max-width: 540px) {
+            .about .overlay {
+                background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(255, 255, 255, 0.9), rgb(255, 255, 255, 0.8), rgb(255, 255, 255, 0.7), rgb(255, 255, 255, 0.5), rgb(255, 255, 255, 0));
+            }
+
+            .about-text {
+                top: 10px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                flex-direction: column;
+                justify-content: center;
+                gap: 2rem;
+                width: 80%;
+                padding: 0 0 0 1.5rem;
+                align-items: center;
+            }
+
+            .stock-text {
+                width: 100%;
+            }
+
+            .resume-text {
+                width: 100%;
+            }
+
+            .background-text {
+                font-size: 30px !important;
+                top: -37% !important;
+                left: 43% !important;
+
+            }
+
+            .lock-icon {
+                position: relative;
+                width: 200px;
+                height: 200px;
+                display: flex;
+                color: #333;
+                overflow: hidden;
+                top: -11rem;
+                left: -2rem;
+            }
+
+        }
+    </style>
+    <style>
+        .grey {
+            background-color: rgb(194, 192, 192);
+
+        }
+
+        .lock-icon {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            color: #333;
+            overflow: hidden;
+
+        }
+
+        .fa-lock {
+            font-size: 130px;
+            margin: auto;
+            display: block;
+            position: relative;
+            color: black;
+            text-shadow: 2px 2px 10px rgb(115, 114, 114);
+            z-index: 99;
+        }
+
+        /* Hover Vibrate Effect */
+        .lock-icon:hover {
+            animation: vibrate 0.2s infinite;
+        }
+
+        /* Shine Animation Keyframes */
+        /* Shine Animation Keyframes (Diagonal) */
+        /* @keyframes shine-diagonal {
+            0% {
+                top: -150%;
+                left: -100%;
+            }
+
+            100% {
+                top: 150%;
+                left: 200%;
+            }
+        } */
+
+        /* Vibrate Animation Keyframes */
+        @keyframes vibrate {
+            0% {
+                transform: translate(0);
+            }
+
+            25% {
+                transform: translate(-2px, 2px);
+            }
+
+            50% {
+                transform: translate(2px, -2px);
+            }
+
+            75% {
+                transform: translate(-2px, -2px);
+            }
+
+            100% {
+                transform: translate(2px, 2px);
+            }
+        }
+
+        .background-text {
+            position: absolute;
+            font-size: 55px;
+            line-height: 100px;
+            text-shadow: 2px 2px 5px rgb(92, 92, 92);
+            font-weight: 600;
+            color: white;
+            opacity: 0.2;
+            text-align: center;
+            white-space: nowrap;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+    </style>
+    <!-- about me section -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+        @font-face {
+            font-family: 'Akzid-bold';
+            src: url('./about-img/font/AkzidGrtskNext-ExtraBold.ttf') format('truetype');
+
+        }
+
+        @font-face {
+            font-family: 'Akzid-light';
+            src: url('./about-img/font/AkzidGrtskNext-Light.ttf') format('truetype');
+
+        }
+
+        @font-face {
+            font-family: 'Akzid-regular';
+            src: url('./about-img/font/AkzidGrtskNext-Regular.ttf') format('truetype');
+
+        }
+
+        @font-face {
+            font-family: 'Akzid-med';
+            src: url('./about-img/font/AkzidGrtskNext-Med.ttf') format('truetype');
+
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        .about-me {
+            height: 100vh;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* Internet Explorer 10+ */
+        }
+
+        /* For WebKit (Chrome, Safari, Edge) */
+        .about-me::-webkit-scrollbar {
+            display: none;
+        }
+
+        .about-1 {
+            height: 100vh;
+            background-image: url('./about-img/hero-bg-about.jpg');
+            color: #fff;
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        .about-1 header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            /* margin-bottom: -50px; */
+            position: absolute;
+            width: 100%;
+            top: -55px;
+            background: black;
+        }
+
+        p.time {
+
+            font-family: Neue Montreal, sans-serif;
+            font-weight: 400;
+            color: #acacac;
+            font-size: 16px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-transform: uppercase;
+            margin-bottom: 0;
+
+        }
+
+        .about-nav {
+            position: sticky;
+            z-index: 11;
+            width: fit-content;
+            margin: auto;
+            margin-top: 10px !important;
+            top: 5px;
+
+            background: linear-gradient(to bottom right, rgba(88, 88, 88, 0.3), rgba(0, 0, 0, 0.3));
+            border-radius: 20px;
+            padding: 12px;
+
+            /* Glass effect */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            /* Safari support */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-clip: padding-box;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+        }
+
+        .about-nav:hover {
+            scale: 1.03;
+        }
+
+
+        .about-nav a {
+            font-family: "Space Grotesk", sans-serif;
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-talk {
+            font-family: "Space Grotesk", sans-serif;
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1.5px solid white;
+            padding: 5px 0;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .intro {
+            position: relative;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            display: flex;
+            flex-direction: row;
+            padding: 40px 40px 100px 40px;
+            justify-content: space-evenly;
+            align-items: flex-start;
+
+        }
+
+        .intro h1 {
+            position: relative;
+
+            height: 50vh;
+            width: 50%;
+            font-family: 'Akzid-bold';
+            font-weight: 700;
+            font-size: 110px;
+            line-height: 126px;
+            letter-spacing: 0%;
+            text-transform: uppercase;
+            margin: 0;
+            color: #fff;
+
+        }
+
+        .intro .img {
+            width: 40%;
+        }
+
+        .intro img {
+            display: flex;
+            width: 90%;
+            margin: auto;
+            height: auto;
+        }
+
+        .about-2 {
+            padding: 40px;
+            background: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .about-2 .text {
+            width: 30%;
+            color: #fff;
+
+        }
+
+        .about-2 .text h2 {
+            font-family: 'Akzid-med';
+            font-weight: 500;
+            font-size: 30px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-transform: uppercase;
+            margin: 0;
+            color: #fff;
+
+        }
+
+        .about-2 .text p {
+            font-family: Neue Montreal, sans-serif;
+            font-weight: 400;
+            font-size: 35px;
+            white-space: nowrap;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-transform: uppercase;
+            color: #fff;
+            margin-top: 3rem;
+
+        }
+
+        .services {
+            background: linear-gradient(to bottom right, rgba(88, 88, 88, 0.3), rgba(0, 0, 0, 0.3));
+
+            border-radius: 20px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 65%;
+            margin: 40px 0 0 40px;
+
+            /* Glass effect properties */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            /* For Safari */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-clip: padding-box;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 10;
+        }
+
+
+        .service {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 40px;
+
+        }
+
+        .service img {
+            width: 35px;
+        }
+
+        .service p,
+        .service h3 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: 22px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-transform: uppercase;
+            margin: 0;
+
+        }
+
+        .service h3 {
+            font-weight: 600;
+            color: #E77000;
+        }
+
+        .service p {
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .border-rb {
+            border-right: 1px solid #FFFFFF;
+            border-bottom: 1px solid #FFFFFF;
+        }
+
+        .border-b {
+            border-bottom: 1px solid #FFFFFF;
+        }
+
+        .border-r {
+            border-right: 1px solid #FFFFFF;
+
+        }
+
+        .about-3 {
+            color: #fff;
+            background: #000;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0;
+            font-family: Akzidenz-Grotesk Next;
+
+
+
+        }
+
+        .about-3 h1 {
+            font-weight: 700;
+
+            font-family: 'Akzid-bold';
+            margin: 0;
+            position: relative;
+            /* bottom: -70px; */
+            color: #fff;
+        }
+
+        .about-3 h1.left-10 {
+            left: -15px;
+        }
+
+        .about-3 h1.right-10 {
+            right: -10px;
+        }
+
+        .about-4 {
+            display: flex;
+            flex-direction: row;
+            padding: 10px 0 50px 0;
+        }
+
+        .about-4 h3 {
+            font-family: Neue Montreal, sans-serif;
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-transform: uppercase;
+            text-align: center;
+            color: #000;
+            margin: 3rem 0;
+        }
+
+        .edu-card {
+            background: rgba(236, 235, 235, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .edu-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .edu-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-icon {
+
+            height: 35px;
+            margin-right: 16px;
+            flex-shrink: 0;
+        }
+
+        .edu-divider {
+            border-top: 1px solid #ddd;
+            margin: 16px 0;
+        }
+
+        .edu-title {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 24px;
+        }
+
+        .edu-sub {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 16px;
+            color: #0F0F0F;
+        }
+
+        .edu-subtitle {
+            color: #0F0F0F;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 18px;
+        }
+
+        .edu,
+        .language {
+            width: 50%;
+        }
+
+        .lang-4 {
+            display: flex;
+            flex-direction: row;
+            width: 80%;
+            margin: 100px auto 0 auto;
+            gap: 20px;
+        }
+
+        .col-1 {
+            width: 26%;
+            display: flex;
+        }
+
+        .col-2 {
+            width: 37%;
+        }
+
+        .col-3 {
+            width: 37%;
+        }
+
+        .js {
+            display: block;
+            width: 100%;
+            margin: auto;
+        }
+
+        .py {
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .cpp {
+            display: block;
+            width: 60%;
+
+        }
+
+        .java {
+            display: block;
+            width: 100%;
+            position: relative;
+            top: 50%;
+            left: -70px;
+        }
+
+        .about-5 {
+            display: flex;
+            flex-direction: row;
+            color: #fff;
+
+        }
+
+        .foot {
+            background: #000;
+            border: 1px solid rgb(85, 84, 84);
+            width: 25%;
+            padding: 40px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .num {
+            font-family: Neue Montreal, sans-serif;
+            font-weight: 400;
+            font-size: 44px;
+
+            line-height: 100%;
+            letter-spacing: 0%;
+            text-transform: uppercase;
+            margin: 0;
+            color: #fff;
+
+        }
+
+        .num-desc {
+            font-family: Neue Montreal, sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 30px;
+            letter-spacing: 0%;
+            text-transform: uppercase;
+            margin: 0;
+            color: #fff;
+
+        }
+
+        .p-relative {
+            position: relative;
+
+
+        }
+
+        .v-line-wh {
+            width: 1.5px;
+            background: white;
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9;
+        }
+
+        .v-line-bl {
+            width: 1.5px;
+            background: rgb(0, 0, 0);
+            height: 100%;
+            position: absolute;
+            transform: translateX(-50%);
+            left: 50%;
+            z-index: 9;
+        }
+
+        .nav-btn {
+            width: 45px;
+            display: none;
+            cursor: pointer;
+        }
+
+        .about-4m {
+            display: none;
+        }
+
+        /* Smallest screen first */
+
+
+
+        @media (max-width: 992px) {
+
+            .v-line-wh,
+            .v-line-bl {
+                display: none;
+            }
+
+            .about-me {
+                background-color: black;
+            }
+
+            .about-1 header {
+                top: 0;
+                padding: 20px 60px 10px 30px;
+            }
+
+            .about-1 header nav {
+                display: none;
+                position: fixed;
+                top: 85px;
+                width: 80%;
+                background: linear-gradient(to bottom right, rgb(88, 88, 88), black);
+                border-radius: 28px;
+                padding: 12px;
+                z-index: 999;
+                text-align: center;
+            }
+
+            .about-1 header nav.show {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-btn {
+                display: block;
+            }
+
+            .btn-talk {
+                display: none;
+            }
+
+            .intro {
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 40px 100px 40px;
+            }
+
+            .intro h1 {
+                width: 100%;
+                height: 300px;
+                font-size: 5rem;
+                line-height: 5rem;
+            }
+
+            .intro .img {
+                width: 95%;
+                /* height: fit-content;
+                margin: 50px auto 0 auto; */
+            }
+
+            .about-2 {
+                flex-direction: column;
+                padding: 25px;
+            }
+
+            .about-2 .text {
+                width: 100%;
+            }
+
+            .services {
+                background: none;
+                padding: 0;
+                grid-template-columns: 1fr;
+                width: 100%;
+                margin: 0;
+                border: none;
+            }
+
+            div.service {
+                border-bottom: 1.5px solid #fff;
+                align-items: center;
+                text-align: center;
+                padding: 20px 0;
+            }
+
+            .border-rb,
+            .border-b,
+            .border-r {
+                border: none;
+            }
+
+            .about-3 h1 {
+                font-size: 12rem;
+            }
+
+            .about-3 h1 {
+                bottom: -40px;
+            }
+
+            .about-4 {
+                display: none;
+            }
+
+            .edu-card {
+                padding: 40px;
+                max-width: 500px;
+                margin: 2rem auto;
+
+            }
+
+            .about-4m {
+                display: flex;
+                flex-direction: column;
+                padding: 40px 30px;
+                background-color: white;
+            }
+
+
+
+            .about-4m .text h4 {
+                font-family: "Space Grotesk", sans-serif;
+                font-weight: 700;
+                font-size: 30px;
+                line-height: 100%;
+                letter-spacing: 0%;
+                text-transform: uppercase;
+                margin: 30px 0 20px 0;
+            }
+
+            .about-4m .text p {
+                font-family: "Space Grotesk", sans-serif;
+                font-weight: 700;
+                font-size: 32px;
+                line-height: 100%;
+                letter-spacing: 0%;
+                text-transform: uppercase;
+                margin: 0;
+            }
+
+            .about-5 {
+                flex-direction: column;
+            }
+
+            .foot {
+                width: -webkit-fill-available;
+                border: none;
+                border-bottom: 1.5px solid #fff;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-3 h1 {
+                font-size: 9rem;
+                bottom: -28px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .about-3 h1 {
+                font-size: 7rem;
+                bottom: -20px;
+            }
+
+            .intro h1 {
+                font-size: 3.5rem;
+                line-height: 3.5rem;
+            }
+
+            .about-2 .text p {
+                font-size: 25px;
+            }
+
+
+
+            .about-3 h1.left-10 {
+                left: -8px;
+            }
+
+            .about-3 h1.right-10 {
+                right: -7px;
+            }
+
+            .edu-card {
+                padding: 30px;
+            }
+
+        }
+
+        @media (max-width: 400px) {
+            .about-3 h1 {
+                font-size: 5rem;
+                bottom: -17px;
+            }
+        }
+
+        @media (min-width: 993px) {
+            .about-2 .text {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                justify-content: center;
+                padding: 0 2rem 0 0;
+            }
+
+            .about-2 .text p {
+                font-size: 30px;
+            }
+
+            .about-3 h1 {
+                font-size: 14rem;
+                bottom: -40px;
+            }
+        }
+
+        /* Larger screens now */
+        @media (min-width: 1400px) {
+            .about-3 h1 {
+                font-size: 16rem;
+                bottom: -50px;
+            }
+
+            .intro h1 {
+                font-size: 120px;
+                line-height: 120px;
+            }
+
+
+            .about-2 .text h2 {
+                font-size: 35px;
+            }
+
+            .about-2 .text p {
+                font-size: 35px;
+            }
+
+            .services {
+                padding: 35px;
+            }
+
+            .service {
+                gap: 16px;
+                padding: 35px;
+            }
+
+            .service p,
+            .service h3 {
+                font-size: 25px;
+            }
+
+            .edu-card {
+                max-width: 650px;
+                padding: 40px;
+            }
+
+            .edu-title {
+                font-size: 25px;
+            }
+
+            .edu-sub {
+                font-size: 21px;
+            }
+
+            .edu-subtitle {
+                font-size: 23px;
+            }
+        }
+
+        @media (min-width: 1650px) {
+            .about-3 h1 {
+                font-size: 22rem;
+                bottom: -95px;
+            }
+
+            .intro h1 {
+                margin: auto;
+                font-size: 150px;
+                line-height: 145px;
+            }
+
+            .about-2 .text {
+                width: 30%;
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                justify-content: center;
+                padding: 3rem;
+            }
+
+            .about-2 .text h2 {
+                font-size: 50px;
+            }
+
+            .about-2 .text p {
+                font-size: 40px;
+            }
+
+            .services {
+                padding: 50px;
+                aspect-ratio: 1/0.5;
+            }
+
+            .service {
+                gap: 25px;
+                padding: 45px;
+            }
+
+            .service p,
+            .service h3 {
+                font-size: 30px;
+            }
+
+            .service img {
+                width: 30px;
+            }
+
+            .edu-card {
+                max-width: 650px;
+                padding: 40px;
+            }
+
+            .edu-title {
+                font-size: 26px;
+            }
+
+            .edu-sub {
+                font-size: 22px;
+            }
+
+            .edu-subtitle {
+                font-size: 24px;
+            }
+        }
+
+        @media (min-width: 1900px) {
+            .about-3 h1 {
+                font-size: 25rem;
+                bottom: -70px;
+            }
+
+            .intro h1 {
+                margin: auto;
+                font-size: 160px;
+                line-height: 160px;
+            }
+
+            .about-2 .text {
+                width: 30%;
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                justify-content: center;
+                padding: 3rem;
+            }
+
+            .about-2 .text h2 {
+                font-size: 55px;
+            }
+
+            .about-2 .text p {
+                font-size: 50px;
+            }
+
+            .services {
+                padding: 50px;
+                aspect-ratio: 1/0.5;
+            }
+
+            .service {
+                gap: 30px;
+                padding: 45px;
+            }
+
+            .service p,
+            .service h3 {
+                font-size: 35px;
+            }
+
+            .service img {
+                width: 35px;
+            }
+
+            .edu-card {
+                max-width: 700px;
+                padding: 45px;
+            }
+
+            .edu-title {
+                font-size: 31px;
+            }
+
+            .edu-sub {
+                font-size: 24px;
+            }
+
+            .edu-subtitle {
+                font-size: 26px;
+            }
+        }
+
+        @media (min-width: 2100px) {
+            .about-3 h1 {
+                font-size: 32rem;
+                bottom: -95px;
+            }
+
+            .intro h1 {
+                margin: auto;
+                font-size: 170px;
+                line-height: 165px;
+            }
+
+            .about-2 .text {
+                width: 30%;
+                color: #fff;
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                justify-content: center;
+                padding: 3rem;
+            }
+
+            .about-2 .text h2 {
+                font-size: 80px;
+            }
+
+            .about-2 .text p {
+                font-size: 70px;
+            }
+
+            .services {
+                padding: 50px;
+                aspect-ratio: 1/0.5;
+            }
+
+            .service {
+                gap: 30px;
+                padding: 45px;
+            }
+
+            .service p,
+            .service h3 {
+                font-size: 40px;
+            }
+
+            .service img {
+                width: 40px;
+            }
+
+            .edu-card {
+                max-width: 700px;
+                padding: 50px;
+            }
+
+            .edu-title {
+                font-size: 35px;
+            }
+
+            .edu-sub {
+                font-size: 28px;
+            }
+
+            .edu-subtitle {
+                font-size: 30px;
+            }
+        }
+    </style>
+    <!-- lottie animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+
+    <style>
+        #lottie-container {
+            background-color: rgb(0, 0, 0);
+            position: fixed;
+            z-index: 9999;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            transition: opacity 0.6s ease-out;
+        }
+
+        #lottie-container.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main " id="home">
+
+
+        <div id="lottie-container"></div>
+
+
+
+
+
+
+        <div class="logo indicator-button" aria-pressed="true">
+            <svg width="1500" height="900" viewBox="0 0 1500 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#000000" opacity="1.00"
+                    d=" M 378.50 187.28 C 378.99 187.38 379.97 187.57 380.46 187.66 C 381.11 192.57 379.50 197.35 379.49 202.24 C 380.48 203.36 381.48 204.49 382.48 205.63 C 399.05 205.94 415.42 202.29 432.00 202.48 C 443.70 202.96 455.31 199.60 467.00 201.33 C 493.58 201.35 520.96 206.28 544.10 219.91 C 555.38 226.60 564.29 240.69 558.86 253.87 C 554.75 264.44 547.36 273.55 538.64 280.69 C 522.33 294.79 503.50 305.59 484.39 315.40 C 421.19 349.63 352.79 372.53 285.09 395.97 C 279.15 398.13 272.69 400.57 269.23 406.24 C 258.32 422.17 249.79 439.56 240.50 456.45 C 238.67 459.10 239.12 462.43 240.78 465.03 C 283.95 488.50 328.04 510.59 374.17 527.70 C 409.83 541.23 446.24 552.86 483.37 561.63 C 576.32 583.49 672.71 593.97 768.02 584.72 C 775.29 584.28 782.59 582.72 789.89 583.91 C 783.93 587.28 777.20 588.88 770.62 590.56 C 733.53 599.77 695.00 601.05 657.00 599.67 C 634.25 599.43 611.57 597.25 588.98 594.66 C 467.58 581.07 349.21 542.32 242.95 482.15 C 237.34 478.34 228.48 478.34 225.24 485.19 C 192.55 542.22 165.82 602.38 135.85 660.83 C 134.08 663.99 131.84 668.45 127.47 667.58 C 127.66 665.80 127.79 664.01 128.30 662.29 C 152.00 598.93 183.92 539.12 215.17 479.26 C 217.27 475.77 217.82 471.70 217.54 467.69 C 215.43 465.35 213.03 463.28 210.34 461.63 C 193.40 450.72 176.73 439.14 162.14 425.18 C 162.76 419.94 167.54 416.83 172.12 415.22 C 200.95 404.24 231.20 397.71 260.61 388.58 C 266.19 386.65 269.92 381.64 272.73 376.69 C 300.37 329.41 328.79 282.51 353.48 233.58 C 354.87 230.88 354.61 227.78 354.67 224.84 C 351.29 222.28 346.91 223.36 343.15 224.28 C 308.86 232.80 275.29 244.12 242.67 257.66 C 202.95 274.73 163.45 294.08 130.45 322.45 C 125.68 326.50 124.65 332.92 121.35 337.93 C 118.80 337.77 116.87 336.15 115.19 334.39 C 115.31 327.59 120.45 322.45 125.00 318.00 C 129.97 312.81 136.10 308.98 142.00 304.98 C 206.29 261.60 279.03 231.30 354.36 213.31 C 358.77 211.96 363.87 210.72 366.59 206.62 C 370.95 200.42 373.12 192.80 378.50 187.28 M 425.46 210.66 L 425.46 211.30 C 409.08 211.85 392.79 214.20 376.59 216.61 C 368.81 218.10 365.60 226.09 362.40 232.37 C 340.98 276.52 317.23 319.48 293.29 362.31 C 291.46 366.50 287.13 372.61 291.53 376.47 C 296.75 377.62 301.74 375.09 306.64 373.70 C 365.49 354.10 424.65 334.36 479.91 305.83 C 501.49 294.81 523.41 283.01 540.42 265.44 C 546.85 258.73 551.98 249.00 548.29 239.65 C 543.48 229.37 532.21 224.76 522.36 220.67 C 491.48 208.79 457.95 209.89 425.46 210.66 M 232.65 406.69 C 218.07 411.35 203.46 415.94 188.62 419.66 C 184.49 420.07 184.13 425.74 187.36 427.63 C 198.29 436.56 210.05 444.40 221.77 452.24 C 223.38 453.51 225.46 453.59 227.42 453.75 C 235.77 442.50 240.97 429.23 248.27 417.29 C 250.12 413.29 253.52 409.49 252.56 404.79 C 245.98 402.58 239.05 404.91 232.65 406.69 Z">
+                </path>
+                <path fill="#000000" opacity="1.00"
+                    d=" M 1138.48 257.54 C 1140.16 254.16 1143.61 252.48 1147.04 251.37 C 1147.91 252.24 1148.81 253.10 1149.71 253.96 C 1135.87 294.34 1114.24 331.51 1096.10 370.05 C 1090.18 382.97 1083.27 395.40 1077.32 408.30 C 1076.31 410.26 1076.19 412.47 1076.16 414.63 C 1078.15 414.46 1080.79 415.12 1082.01 413.01 C 1107.69 373.46 1133.01 333.52 1163.01 297.03 C 1174.09 283.82 1183.65 269.06 1197.01 257.96 C 1201.63 255.32 1208.12 251.37 1213.17 254.88 C 1215.88 259.17 1213.88 264.50 1213.21 269.12 C 1210.23 279.47 1207.20 289.87 1202.67 299.67 C 1178.97 353.71 1152.96 406.74 1131.84 461.89 C 1124.51 482.33 1112.57 502.05 1112.34 524.30 C 1113.03 524.61 1114.40 525.23 1115.09 525.54 C 1120.97 522.52 1125.06 517.05 1128.70 511.71 C 1149.03 483.49 1167.50 454.00 1187.45 425.52 C 1204.23 400.28 1221.33 375.27 1238.20 350.11 C 1246.54 338.52 1253.44 325.78 1263.54 315.54 C 1265.89 313.07 1269.05 311.66 1272.12 310.29 C 1276.64 311.52 1276.02 316.20 1274.69 319.68 C 1255.36 372.60 1235.92 425.51 1217.91 478.90 C 1214.05 493.41 1210.07 508.98 1213.98 523.89 C 1217.03 535.06 1228.93 541.25 1239.97 540.62 C 1259.09 540.83 1276.25 531.04 1292.93 522.86 C 1339.60 499.15 1376.02 460.75 1416.51 428.47 C 1419.43 426.96 1422.53 421.95 1425.92 424.57 C 1400.43 454.88 1370.64 481.34 1338.78 504.78 C 1315.33 522.05 1289.97 537.21 1262.16 546.27 C 1245.58 551.61 1226.39 555.58 1210.23 546.88 C 1199.85 541.46 1193.86 529.55 1194.44 518.02 C 1193.79 504.99 1198.74 492.63 1202.48 480.39 C 1212.81 452.05 1222.47 423.44 1234.74 395.85 C 1237.71 387.89 1242.26 380.10 1241.75 371.31 C 1238.70 371.07 1235.62 371.25 1232.86 372.66 C 1201.59 418.69 1170.09 464.64 1141.24 512.27 C 1132.17 526.54 1124.52 541.80 1114.32 555.33 C 1110.26 558.61 1104.59 563.76 1099.14 560.93 C 1093.64 556.85 1090.62 549.77 1091.98 542.99 C 1093.16 524.49 1097.02 506.00 1105.19 489.26 C 1134.79 425.02 1164.34 360.74 1193.08 296.11 C 1196.18 289.81 1196.77 282.76 1198.21 275.99 C 1199.11 273.92 1196.96 272.00 1194.95 272.68 C 1189.61 273.86 1185.15 277.60 1181.91 281.87 C 1145.29 325.76 1114.37 374.01 1084.77 422.80 C 1054.03 473.41 1024.87 525.06 999.63 578.64 C 996.19 585.43 993.35 593.33 986.33 597.28 C 983.64 598.89 979.28 601.30 976.94 597.90 C 974.20 589.26 979.12 581.04 982.34 573.33 C 1005.13 519.45 1033.99 468.51 1060.44 416.41 C 1076.69 385.59 1092.53 354.53 1108.61 323.61 C 1113.88 312.59 1120.14 302.03 1124.65 290.65 C 1129.02 279.54 1132.49 267.94 1138.48 257.54 Z">
+                </path>
+                <path fill="#000000" opacity="1.00"
+                    d=" M 812.89 356.78 C 821.67 351.75 830.91 346.02 841.44 346.47 C 842.48 347.90 843.52 349.35 844.54 350.82 C 842.77 356.61 839.26 361.75 834.63 365.64 C 797.37 398.68 752.65 421.46 712.42 450.44 C 700.01 461.26 689.92 474.75 682.27 489.31 C 679.87 494.45 676.60 500.82 679.72 506.32 C 684.58 511.50 692.42 511.41 699.01 512.00 C 737.34 513.42 774.51 499.53 812.86 501.47 C 814.93 501.50 816.90 502.14 818.88 502.71 C 819.48 507.35 814.23 507.22 811.01 507.91 C 781.82 513.33 752.48 517.97 723.05 521.90 C 708.47 523.57 693.21 524.78 679.10 519.87 C 672.78 517.74 668.68 512.14 666.23 506.21 C 651.14 510.77 634.98 514.46 619.29 510.60 C 615.38 509.66 613.04 506.25 610.58 503.38 C 597.08 503.69 584.61 510.00 571.86 513.84 C 565.94 515.81 558.76 515.07 555.30 509.29 C 541.56 510.23 527.79 511.88 513.98 511.13 C 506.60 510.42 498.55 508.38 493.69 502.35 C 491.52 499.65 490.13 495.11 485.93 495.30 C 466.08 494.69 447.52 503.23 428.01 505.36 C 423.43 505.89 418.55 503.75 417.34 499.00 C 418.91 495.31 421.34 491.87 424.98 489.99 C 435.00 484.53 446.09 481.00 457.41 479.53 C 463.65 478.70 470.51 479.87 474.96 484.67 C 480.81 485.09 486.69 482.63 492.44 484.57 C 499.86 486.51 501.09 496.19 508.37 498.53 C 525.94 503.81 544.48 496.74 562.35 499.48 C 568.99 494.74 574.57 487.73 582.81 485.79 C 579.49 492.18 572.24 495.95 570.20 503.09 C 570.87 503.44 572.22 504.16 572.89 504.51 C 582.65 500.79 592.57 497.51 602.64 494.72 C 606.86 493.66 611.50 492.75 615.72 494.31 C 619.25 495.46 620.38 499.62 623.62 501.21 C 637.17 505.16 651.17 501.76 664.96 501.35 C 667.46 501.21 667.72 498.20 668.44 496.38 C 671.06 487.02 676.81 479.06 682.08 471.05 C 696.68 450.31 715.61 433.20 734.25 416.21 C 758.81 394.35 784.53 373.56 812.89 356.78 M 805.41 372.36 C 794.99 379.96 784.42 387.36 774.11 395.11 C 771.54 396.80 769.83 399.37 768.61 402.13 C 773.84 401.50 777.92 398.06 782.03 395.08 C 791.41 387.99 801.06 381.27 810.55 374.33 C 810.55 373.26 810.55 372.19 810.57 371.13 C 808.77 371.19 806.82 371.04 805.41 372.36 Z">
+                </path>
+                <path fill="#000000" opacity="1.00"
+                    d=" M 1398.39 567.20 C 1400.11 560.42 1406.82 555.72 1413.76 556.25 C 1415.82 557.97 1417.08 560.54 1418.22 562.95 C 1418.46 568.54 1413.14 572.26 1408.20 573.36 C 1405.93 572.52 1403.62 571.82 1401.30 571.23 C 1400.29 569.90 1399.32 568.55 1398.39 567.20 Z">
+                </path>
+            </svg>
+        </div>
+        <ul class="indicators">
+            <li class="indicator">
+                <button class="indicator-button">
+                    <span>About Me</span>
+                </button>
+            </li>
+            <li class="indicator">
+                <button class="indicator-button">
+                    <span>Q4/F23</span>
+                </button>
+            </li>
+            <li class="indicator">
+                <button class="indicator-button">
+                    <span>Q3/Y25</span>
+                </button>
+            </li>
+            <li class="indicator">
+                <button class="indicator-button">
+                    <span>Q1/F24</span>
+                </button>
+            </li>
+
+        </ul>
+        <div class="contact indicator-button"><span>Contact</span></div>
+        <div class="vertical-slider" id="vertical-slider">
+            <div class="vertical-single-slide vertical-single-slide-0 dark" data-background-color="dark">
+                <div class="thumbnail">
+                    <iframe title="vimeo-player-home"
+                        src="https://player.vimeo.com/video/1078451942?h=5478c6929e&autoplay=1&loop=1&autopause=0&background=1&muted=1"
+                        width="1920" height="1080" frameborder="0" muted
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                        allowfullscreen uk-cover="autoplay: inview"></iframe>
+                </div>
+                <div class="video-dark-overlay" style="opacity: .35;"></div>
+                <div class="video-title">
+                    <h1>RAUL MALIK</h1>
+                </div>
+                <div class="scroll-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40.598" height="40.805" viewBox="0 0 40.598 40.805">
+                        <g transform="translate(7.405 7.751) rotate(135)">
+                            <path d="M-636.477-696.89h20.561v20.561" transform="translate(629.671 664.9)" fill="none"
+                                stroke="#fff" stroke-miterlimit="10" stroke-width="1" />
+                            <line x1="28" y2="28" transform="translate(-14.245 -31.99)" fill="none" stroke="#fff"
+                                stroke-miterlimit="10" stroke-width="1" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="video-side-text">
+                    <a href="CV.pdf" target="_blank"><span>Download CV.pdf</span></a>
+                </div>
+            </div>
+
+            <div class="vertical-single-slide vertical-single-slide-11 light" data-background-color="light">
+
+                <section class="about-me">
+                    <nav class="about-nav">
+                        <a href="#">START</a>
+                        <a href="#">ABOUT</a>
+                        <a href="#">PORTFOLIO</a>
+                    </nav>
+                    <div class="about-1 p-relative">
+                        <div class="v-line-wh"></div>
+                        <header>
+                            <p class="time">DENMARK, Copenhagen <span id="copenhagen-time"></span></p>
+
+                            <img src="about-img/nav-btn.png" alt="" class="nav-btn">
+                            <a class="btn-talk" href="">Let's Talk &nbsp;<i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </header>
+                        <div class="intro">
+                            <h1> I'M A <br>
+                                <span id="typewriter" class="typewriter-text"></span>
+                            </h1>
+                            <div class="img">
+                                <img src="about-img/svg-face.svg" alt="">
+                            </div>
+
+                        </div>
+                        <style>
+                            .typewriter-text {
+                                color: #ffffff;
+                                /* A bright green color */
+                                border-right: 0.1em solid #ffffff;
+                                /* The cursor */
+                                /* white-space: nowrap; */
+                                overflow: hidden;
+                                animation: blinking-cursor 0.75s step-end infinite;
+                            }
+
+                            /* Blinking cursor animation */
+                            @keyframes blinking-cursor {
+
+                                from,
+                                to {
+                                    border-color: transparent
+                                }
+
+                                50% {
+                                    border-color: #ffffff;
+                                }
+                            }
+                        </style>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', () => {
+                                const typewriterElement = document.getElementById('typewriter');
+                                // The element to observe is now the container section
+                                const typewriterSection = document.querySelector('.about-1');
+
+                                const titles = [
+                                    "SOFTWARE ENGINEER",
+                                    "DATA ANALYST",
+                                    "MOBILE DEVELOPER",
+                                    "UI/UX ENTHUSIAST"
+                                ];
+
+                                const typingSpeed = 180;
+                                const deletingSpeed = 80;
+                                const delayBetweenTitles = 1500;
+
+                                let titleIndex = 0;
+                                let charIndex = 0;
+                                let isDeleting = false;
+                                let animationStarted = false; // Flag to ensure animation runs only once
+
+                                function type() {
+                                    if (!animationStarted) return; // Don't run if not triggered
+                                    const currentTitle = titles[titleIndex];
+                                    let displayedText = '';
+
+                                    if (isDeleting) {
+                                        displayedText = currentTitle.substring(0, charIndex - 1);
+                                        charIndex--;
+                                    } else {
+                                        displayedText = currentTitle.substring(0, charIndex + 1);
+                                        charIndex++;
+                                    }
+
+                                    typewriterElement.textContent = displayedText;
+
+                                    if (!isDeleting && charIndex === currentTitle.length) {
+                                        setTimeout(() => isDeleting = true, delayBetweenTitles);
+                                    } else if (isDeleting && charIndex === 0) {
+                                        isDeleting = false;
+                                        titleIndex = (titleIndex + 1) % titles.length;
+                                    }
+
+                                    const speed = isDeleting ? deletingSpeed : typingSpeed;
+                                    setTimeout(type, speed);
+                                }
+
+                                // Use Intersection Observer to trigger the animation
+                                const observer = new IntersectionObserver((entries) => {
+                                    entries.forEach(entry => {
+                                        // When the section is in view and animation hasn't started
+                                        if (entry.isIntersecting && !animationStarted) {
+                                            animationStarted = true; // Set flag
+                                            type(); // Start the typewriter effect
+                                            observer.unobserve(typewriterSection); // Stop observing once triggered
+                                        }
+                                    });
+                                }, {
+                                    root: null, // observes intersections relative to the viewport
+                                    threshold: 0.5 // trigger when 50% of the element is visible
+                                });
+
+                                // Start observing the typewriter section element
+                                observer.observe(typewriterSection);
+                            });
+                        </script>
+
+                    </div>
+                    <div class="outer-black p-relative">
+                        <div class="v-line-wh"></div>
+                        <div class="about-2 ">
+
+                            <div class="text">
+                                <h2>MY SERVICES</h2>
+                                <p>solutions that <br> drive real-world <br> impact.</p>
+                            </div>
+                            <div class="services">
+                                <div class="service border-rb">
+                                    <img src="about-img/Frame1.png" alt="">
+                                    <h3>Software Development</h3>
+                                    <p>Building scalable, high-performance applications.</p>
+                                </div>
+                                <div class="service border-b">
+                                    <img src="about-img/Frame2.png" alt="">
+                                    <h3>Security Focused</h3>
+                                    <p>Engineering systems cybersecurity at the core.</p>
+                                </div>
+                                <div class="service border-r">
+                                    <img src="about-img/Frame3.png" alt="">
+                                    <h3>Problem Solving</h3>
+                                    <p>From architecture to execution — solving complex challenges.</p>
+                                </div>
+                                <div class="service">
+                                    <img src="about-img/Frame4.png" alt="">
+                                    <h3>Continuous Learning</h3>
+                                    <p>Staying ahead in a rapidly evolving tech world.</p>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="about-3 p-relative" style="overflow: hidden;">
+                        <div class="v-line-wh"></div>
+                        <h1 class="left-10">M</h1>
+                        <h1>A</h1>
+                        <h1>L</h1>
+                        <h1>I</h1>
+                        <h1 class="right-10">K</h1>
+                    </div>
+                    <div class="outer-white p-relative">
+                        <div class="v-line-bl"></div>
+                        <div class="about-4 ">
+
+
+                            <div class="edu">
+                                <h3>EDUCATIONAL BACKGROUND</h3>
+
+                                <div class="edu-card">
+                                    <div class="edu-section">
+                                        <img src="about-img/imp.png" alt="" class="edu-icon">
+                                        <div>
+                                            <div class="edu-title">IMPERIAL COLLEGE LONDON (ICL)</div>
+                                            <div class="edu-sub">M.SC MACHINE LEARNING AND DATA SCIENCE</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="edu-divider"></div>
+
+                                    <div class="edu-section">
+                                        <img src="about-img/dtu.png" alt="" class="edu-icon">
+                                        <div>
+                                            <div class="edu-title">TECHNICAL UNIVERSITY OF DENMARK</div>
+                                            <div class="edu-sub">B.SC (HONS) COMPUTER SCIENCE</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="edu-divider"></div>
+
+                                    <div class="edu-section">
+                                        <img src="about-img/two.png" alt="" class="edu-icon">
+                                        <div>
+                                            <div class="edu-subtitle">CERTIFIED SECURE SOFTWARE</div>
+                                            <div class="edu-subtitle">LIFECYCLE PROFESSIONAL (CSSLP)</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="edu-divider"></div>
+
+                                    <div class="edu-section">
+                                        <img src="about-img/c-i.png" alt="" class="edu-icon">
+                                        <div>
+                                            <div class="edu-subtitle">CERTIFICATIONS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="language">
+                                <h3>LANGUAGES</h3>
+                                <div class="lang-4">
+                                    <div class="col-1">
+                                        <img src="about-img/jx.png" alt="" class="js">
+                                    </div>
+                                    <div class="col-2">
+                                        <img src="about-img/py.png" alt="" class="py">
+                                        <img src="about-img/cpp.png" alt="" class="cpp">
+                                    </div>
+                                    <div class="col-3">
+                                        <img src="about-img/java.png" alt="" class="java">
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-4m">
+
+                        <div class="edu-card">
+                            <div class="edu-section">
+                                <img src="about-img/imp.png" alt="" class="edu-icon">
+                                <div>
+                                    <div class="edu-title">IMPERIAL COLLEGE LONDON (ICL)</div>
+                                    <div class="edu-sub">M.SC MACHINE LEARNING AND DATA SCIENCE</div>
+                                </div>
+                            </div>
+
+                            <div class="edu-divider"></div>
+
+                            <div class="edu-section">
+                                <img src="about-img/dtu.png" alt="" class="edu-icon">
+                                <div>
+                                    <div class="edu-title">TECHNICAL UNIVERSITY OF DENMARK</div>
+                                    <div class="edu-sub">B.SC (HONS) COMPUTER SCIENCE</div>
+                                </div>
+                            </div>
+
+                            <div class="edu-divider"></div>
+
+                            <div class="edu-section">
+                                <img src="about-img/two.png" alt="" class="edu-icon">
+                                <div>
+                                    <div class="edu-subtitle">CERTIFIED SECURE SOFTWARE</div>
+                                    <div class="edu-subtitle">LIFECYCLE PROFESSIONAL (CSSLP)</div>
+                                </div>
+                            </div>
+
+                            <div class="edu-divider"></div>
+
+                            <div class="edu-section">
+                                <img src="about-img/c-i.png" alt="" class="edu-icon">
+                                <div>
+                                    <div class="edu-subtitle">CERTIFICATIONS</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-5">
+                        <div class="foot">
+                            <div class="text">
+                                <p class="num">Problem Solver</p>
+                                <p class="num-desc">From reverse engineering APIs to data-driven apps</p>
+                            </div>
+                            <img src="about-img/Frame5.png" alt="">
+                        </div>
+                        <div class="foot">
+                            <div class="text">
+                                <p class="num">Background in</p>
+                                <p class="num-desc">Data & Analytics</p>
+                            </div>
+                            <img src="about-img/Frame6.png" alt="">
+                        </div>
+                        <div class="foot">
+                            <div class="text">
+                                <p class="num">4+</p>
+                                <p class="num-desc">YEARS EXPERIENCE</p>
+                            </div>
+                            <img src="about-img/Frame7.png" alt="">
+                        </div>
+                        <div class="foot">
+                            <div class="text">
+                                <p class="num">UI/UX</p>
+                                <p class="num-desc">Design systems & Responsive layouts</p>
+                            </div>
+                            <img src="about-img/Frame8.png" alt="">
+                        </div>
+                    </div>
+                </section>
+
+
+                <script>
+                    const navBtn = document.querySelector('.nav-btn');
+                    const nav = document.querySelector('header nav');
+
+                    navBtn.addEventListener('click', () => {
+                        nav.classList.toggle('show');
+                    });
+                </script>
+            </div>
+
+
+            <div class="vertical-single-slide vertical-single-slide-10 light" data-background-color="light">
+                <div class="stripe-center"></div>
+                <div class="vertical-single-slide-wrap">
+                    <div class="name">
+                        <h2 class="tricks">PROJECT 1<br>IOS Widgets</h2>
+                    </div>
+                    <div class="description" style="z-index: 99999;">
+                        <div class="d-inner">
+                            <p
+                                style="background-color: rgba(255, 255, 255, 0.45);padding: 5px 5px 5px 0;border-radius: 5px;margin-bottom: 0;">
+                                In collaboration with MyMasjid, I reimagined their prayer app widgets, enhancing both
+                                the
+                                home screen and lock screen experience. By integrating API recall functionality, I
+                                designed intuitive, user-friendly widgets that provide real-time prayer times, Qibla
+                                direction, and other essential features, all accessible at a glance. These improvements
+                                offer a seamless and enriching experience for users, ensuring their connection to prayer
+                                is more convenient and personalized than ever.</p>
+                            <span class="tag">XCODE + IOS WIDGETS + FIGMA + DESIGN + UI/UX + API INTEGRATION</span>
+                            <div>
+                                <a class="btn" style="padding: 12px 20px;">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>Github repo</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="flex-col slide-content">
+                                <div class="s-s-item s-b s-r s1"><img data-src="assets\img\slide-10\mymasjidlogo.svg"
+                                        uk-img="target: .vertical-single-slide-0"></div>
+                                <div class="s-s-item s-b s-l s2"><img data-src="assets\img\slide-10\Xcode.svg.png"
+                                        uk-img="target: .vertical-single-slide-0"></div>
+                                <div class="s-s-item s-b s-r s3"><img data-src="assets\img\slide-10\rectwidg.png"
+                                        uk-img="target: .vertical-single-slide-0"></div>
+                                <div class="s-s-item s-b s-r s5"><img id="hover3"
+                                        data-src="assets\img\slide-10\widgetmedium3d.png"
+                                        uk-img="target: .vertical-single-slide-0"></div>
+                                <div class="s-s-item s-b s-l s6"> <video
+                                        src="assets/img/slide-10/03 Iphone 15 Pro Mockup With White Rocktestt.webm" loop
+                                        muted playsinline uk-video="autoplay: inview"></video>
+                                </div>
+                                <div class="s-s-item s-b s-l s7"><img id="hover1"
+                                        src="assets\img\slide-10\widgetlarge3d.png"
+                                        uk-img="target: .vertical-single-slide-0"></div>
+                                <div class="s-s-item s-b s-r s9"><img data-src="assets\img\slide-10\codevertical.png"
+                                        uk-img="target: .vertical-single-slide-0"></div>
+                                <div class="s-s-item s-b s-l s10"><img id="hover2"
+                                        data-src="assets\img\slide-10\widgetsmall3d.png"
+                                        uk-img="target: .vertical-single-slide-0">
+                                    <img src="assets/img/slide-10/shadow.png" alt="" style="width: 80%;
+                                    top: 141%;
+                                    left: 105.5%;">
+                                </div>
+                                <div class="s-s-item s-b s-r s11"><img
+                                        data-src="assets/img/slide-10/mymasjidsalahioswidget.svg"
+                                        uk-img="target: .vertical-single-slide-0"></div>
+                            </div>
+                            <style>
+                                #hover1,
+                                #hover2,
+                                #hover3 {
+                                    transition: all 0.5s ease;
+                                }
+
+                                #hover1:hover {
+                                    content: url('assets/img/slide-10/widgetlargewhite3d.png') !important;
+                                    z-index: 9999 !important;
+                                }
+
+                                #hover2:hover {
+                                    content: url('assets/img/slide-10/widgetsmallwhite3d.png');
+                                }
+
+                                .vertical-single-slide-10 .s-s-item.s7 {
+                                    z-index: 999 !important;
+                                }
+
+
+                                .vertical-single-slide-10 .s-s-item.s5 {
+                                    z-index: 999 !important;
+                                }
+
+                                #hover3:hover {
+                                    content: url('assets/img/slide-10/widgetmediumwhite3d.png');
+                                    z-index: 9999 !important;
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vertical-single-slide vertical-single-slide-14 grey" data-background-color="light">
+                <div class="stripe-center"></div>
+                <div class="vertical-single-slide-wrap">
+                    <div class="name">
+                        <h2 class="tricks">PROJECT 2<br>Ciphra encrypted messenger</h2>
+                    </div>
+                    <!-- <div class="description">
+                        <div class="d-inner">
+                            <p>PROJEKT DESCRIPTION TEXT</p>
+                            <span class="tag">KEYWORDS OM TING BRUGT</span>
+                        </div>
+                    </div> -->
+                    <div class="container">
+                        <div class="row">
+                            <h1 class="background-text">STAY TUNED <br> . <br> ETA 2025 (test)</h1>
+
+                            <div class="lock-icon">
+                                <i class="fa-solid fa-lock"></i>
+                            </div>
+
+                            <!-- <div class="flex-col slide-content">
+                                <div class="s-s-item s-b s-r s1"><img
+                                        data-src="ASSET PLACERHOLDER"
+                                        uk-img="target: .vertical-single-slide-11"></div>
+                                <div class="s-s-item s-b s-l s2"><img
+                                        data-src="ASSET PLACERHOLDER"
+                                        uk-img="target: .vertical-single-slide-11"></div>
+                                <div class="s-s-item s-b s-r s3"><img
+                                        data-src="ASSET PLACERHOLDER"
+                                        uk-img="target: .vertical-single-slide-11"></div>
+                                <div class="s-s-item s-b s-l s4"><img
+                                        data-src="ASSET PLACERHOLDER"
+                                        uk-img="target: .vertical-single-slide-11"></div>
+                                <div class="s-s-item s-b s-r s5">
+                                    <div><img data-src="ASSET PLACERHOLDER"
+                                            uk-img="target: .vertical-single-slide-11"></div>
+                                </div>
+                                <div class="s-s-item s-b s-l s6"><img
+                                        data-src="ASSET PLACERHOLDER"
+                                        uk-img="target: .vertical-single-slide-11"></div>
+                                <div class="s-s-item s-b s-r s7"><img
+                                        data-src="ASSET PLACERHOLDER"
+                                        uk-img="target: .vertical-single-slide-11"></div>
+                                <div class="s-s-item s-b s-l s8">
+                                    <div><img
+                                            data-src="ASSET PLACERHOLDER"
+                                            uk-img="target: .vertical-single-slide-11"><video
+                                            src="ASSET PLACERHOLDER" loop muted
+                                            playsinline uk-video="autoplay: inview"></video></div>
+                                </div>
+                                <div class="s-s-item s-b s-r s9"><img
+                                        data-src="ASSET PLACERHOLDER"
+                                        uk-img="target: .vertical-single-slide-11"></div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="vertical-single-slide vertical-single-slide-13 grey" data-background-color="light">
+                <div class="stripe-center"></div>
+                <div class="vertical-single-slide-wrap">
+                    <div class="name">
+                        <h2 class="tricks">Project 3<br>.</h2>
+                    </div>
+                    <!-- <div class="description">
+                        <div class="d-inner">
+                            <p>TEKST OM PROJEKTET</p>
+                            <span class="tag">KEYWORDS AF HVAD DER BRUGT</span>
+                        </div>
+                    </div> -->
+                    <div class="container">
+                        <div class="row">
+                            <h1 class="background-text">STAY TUNED <br> . <br> FOR SOMETHING SPECIAL!</h1>
+                            <div class="lock-icon">
+                                <i class="fa-solid fa-lock"></i>
+                            </div>
+                            <!-- <div class="flex-col slide-content">
+                                <div class="s-s-item s-b s-r s1"><img
+                                        data-src="ASSET PLACERHOLDER"
+                                        uk-img="target: .vertical-single-slide-10"></div>
+                                <div class="s-s-item s-b s-l s2"><img
+                                        data-src="ASSET PLACERHOLDER"
+                                        uk-img="target: .vertical-single-slide-10"></div>
+                                <div class="s-s-item s-b s-r s3"><img
+                                        data-src="ASSET PLACERHOLDER"
+                                        uk-img="target: .vertical-single-slide-10"></div>
+                                <div class="s-s-item s-b s-l s4"><img
+                                        data-src="ASSET PLACERHOLDER"
+                                        uk-img="target: .vertical-single-slide-10"></div>
+                                <div class="s-s-item s-b s-r s5"><img
+                                        data-src="ASSET PLACERHOLDER"
+                                        uk-img="target: .vertical-single-slide-10"></div>
+                                <div class="s-s-item s-b s-l s6"><img
+                                        data-src="ASSET PLACERHOLDER"
+                                        uk-img="target: .vertical-single-slide-10"></div>
+                                <div class="s-s-item s-b s-l s7"><img
+                                        data-src="ASSET PLACERHOLDER"
+                                        uk-img="target: .vertical-single-slide-10"></div>
+                                <div class="s-s-item s-b s-r s8"><img
+                                        data-src="ASSET PLACERHOLDER"
+                                        uk-img="target: .vertical-single-slide-10"></div>
+                                <div class="s-s-item s-b s-r s9"><video
+                                        src="ASSET PLACERHOLDER" loop muted
+                                        playsinline uk-video="autoplay: inview"></video></div>
+                                <div class="s-s-item s-b s-r s10"><img
+                                        data-src="ASSET PLACERHOLDER"
+                                        uk-img="target: .vertical-single-slide-10"></div>
+                                <div class="s-s-item s-b s-r s11"><img
+                                        data-src="ASSET PLACERHOLDER"
+                                        uk-img="target: .vertical-single-slide-10"></div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vertical-single-slide vertical-single-slide-last dark" data-background-color="dark">
+                <div class="stripe-center"></div>
+                <div class="vertical-single-slide-wrap">
+                    <div class="name">
+                        <h2 class="tricks">Reach out <br> for any opportunities</h2>
+                        <h2 class="tricks"><a href="mailto:Raul6@gmail.com">Raul6@gmail.com</a></h2>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="flex-col slide-content">
+                                <div class="s-s-item s-b s-l s1">
+                                    <div class="video-last">
+                                        <img src="IMG_8112.png" alt="Screenshot" width="1000" height="1000"
+                                            style="display:block; width:55%; height:auto; object-fit:cover;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-links-bottom">
+                        <div class="footer-links-left">
+                            <a href="https://www.instagram.com/raulmaliik/" target="_blank" class="footer-link-btn">
+                                <span>Instagram</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13.549" height="13"
+                                    viewBox="0 0 13.549 13">
+                                    <g id="Group_9044" data-name="Group 9044"
+                                        transform="translate(957.643 585.25) rotate(-180)">
+                                        <path id="Path_179" data-name="Path 179" d="M0,0,5.79.243l.243,5.79"
+                                            transform="translate(952.67 574.484) rotate(45)" fill="none" stroke="#000"
+                                            stroke-miterlimit="10" stroke-width="1" />
+                                        <line id="Line_30" data-name="Line 30" x1="8.485" y2="8.485"
+                                            transform="translate(950.593 572.75) rotate(45)" fill="none" stroke="#000"
+                                            stroke-miterlimit="10" stroke-width="1" />
+                                    </g>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/raulmalik/" target="_blank" class="footer-link-btn">
+                                <span>LinkedIn</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13.549" height="13"
+                                    viewBox="0 0 13.549 13">
+                                    <g id="Group_9044" data-name="Group 9044"
+                                        transform="translate(957.643 585.25) rotate(-180)">
+                                        <path id="Path_179" data-name="Path 179" d="M0,0,5.79.243l.243,5.79"
+                                            transform="translate(952.67 574.484) rotate(45)" fill="none" stroke="#000"
+                                            stroke-miterlimit="10" stroke-width="1" />
+                                        <line id="Line_30" data-name="Line 30" x1="8.485" y2="8.485"
+                                            transform="translate(950.593 572.75) rotate(45)" fill="none" stroke="#000"
+                                            stroke-miterlimit="10" stroke-width="1" />
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="footer-links-right">
+                            <a href="certifications.html" class="footer-link-btn">
+                                <span>CERTIFICATES</span>
+                            </a>
+                            <a href="no blog yet" class="footer-link-btn">
+                                <span>Blog</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        const lottieContainer = document.getElementById('lottie-container');
+
+        const animation = lottie.loadAnimation({
+            container: lottieContainer,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: 'Tracesign.json'
+        });
+
+        // Change all path fill colors to white
+        animation.addEventListener('DOMLoaded', () => {
+            const paths = lottieContainer.querySelectorAll('path');
+            paths.forEach(path => {
+                path.setAttribute('fill', '#ffffff');
+            });
+        });
+
+        // Fade out after animation complete
+        animation.addEventListener('complete', () => {
+            lottieContainer.classList.add('fade-out');
+
+            setTimeout(() => {
+                lottieContainer.style.display = 'none';
+            }, 600); // Match the CSS transition duration
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/ScrollToPlugin.min.js"></script>
+
+    <script src="assets/js/uikit.min.js"></script>
+
+    <script src="assets/js/custom-cursor.js"></script>
+    <script src="assets/js/in-view.min.js"></script>
+
+    <script src="assets/js/vertical-nav.js"></script>
+    <script src="assets/js/main-v2.js"></script>
+
+
+
+    <script>
+        function updateTime() {
+            const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'Europe/Copenhagen' };
+            const now = new Date();
+            document.getElementById('copenhagen-time').textContent = now.toLocaleTimeString('en-GB', options);
+        }
+        document.addEventListener('DOMContentLoaded', updateTime);
+        setInterval(updateTime, 1000);
+    </script>
+
+</body>
+
+</html>

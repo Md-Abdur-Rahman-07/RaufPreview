@@ -250,6 +250,7 @@
         }
 
         .about-me {
+            background-color: black;
             height: 100vh;
             overflow-y: auto;
             scroll-behavior: smooth;
@@ -265,7 +266,7 @@
         }
 
         .about-1 {
-            height: 100vh;
+            height: auto;
             background-image: url('./about-img/hero-bg-about.jpg');
             color: #fff;
             background-size: cover;
@@ -347,12 +348,10 @@
 
         .intro {
             position: relative;
-            transform: translate(-50%, -50%);
-            top: 50%;
-            left: 50%;
+          
             display: flex;
             flex-direction: row;
-            padding: 40px 40px 100px 40px;
+            padding: 40px 40px 80px 40px;
             justify-content: space-evenly;
             align-items: flex-start;
 
@@ -361,7 +360,7 @@
         .intro h1 {
             position: relative;
 
-            height: 50vh;
+            /* height: 50vh; */
             width: 50%;
             font-family: 'Akzid-bold';
             font-weight: 700;
@@ -527,6 +526,7 @@
         }
 
         .about-4 {
+            background-color: #ffff;
             display: flex;
             flex-direction: row;
             padding: 10px 0 50px 0;
@@ -780,7 +780,8 @@
             }
 
             .intro h1 {
-                width: 100%;
+                width: 85%;
+                margin: auto;
                 height: 300px;
                 font-size: 5rem;
                 line-height: 5rem;
@@ -1330,28 +1331,28 @@
 
                         </div>
                         <style>
-                            .typewriter-text {
-                                color: #ffffff;
-                                /* A bright green color */
-                                border-right: 0.1em solid #ffffff;
-                                /* The cursor */
-                                /* white-space: nowrap; */
-                                overflow: hidden;
-                                animation: blinking-cursor 0.75s step-end infinite;
-                            }
+   /* .typewriter-text {
+  color: #ffffff;
+  display: inline-block;
+  position: relative;
+}
 
-                            /* Blinking cursor animation */
-                            @keyframes blinking-cursor {
+.typewriter-text::after {
+  content: "";
+  text-wrap: nowrap;
+  display: inline-block;
+  width: 0.2em;
+  height: 5rem; 
+  background: #ffffff;
+  margin-left: 5px;
+  animation: blinking-cursor 0.75s step-end infinite;
+}
 
-                                from,
-                                to {
-                                    border-color: transparent
-                                }
+@keyframes blinking-cursor {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+} */
 
-                                50% {
-                                    border-color: #ffffff;
-                                }
-                            }
                         </style>
                         <script>
                             document.addEventListener('DOMContentLoaded', () => {

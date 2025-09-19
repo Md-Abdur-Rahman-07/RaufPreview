@@ -1148,10 +1148,10 @@ main.dark .contact.indicator-button::after {
     width: 38%;
 }
 .vertical-single-slide-10 .s-s-item.s11 * {
-    top: 34%;
-    left: -33%;
+ top: -58%;
+    left: -27%;
     transform: translate(0, 0);
-    width: 108% !important;
+    width: 100% !important;
 }
   .vertical-single-slide-10 .s-s-item.s6 img.box-shadow-video {
     display: none;
@@ -1161,6 +1161,7 @@ main.dark .contact.indicator-button::after {
 position: relative;
 right: -155px;
 bottom: 5px;
+display: none;
     }
     .position-mobile a{
 

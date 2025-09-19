@@ -692,7 +692,7 @@ main.dark .contact.indicator-button::after {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) rotate(0.001deg);
-        z-index: 11;
+        z-index: 9999;
     }
 .s-s-item.s-r {
     top: 50%;
@@ -1267,7 +1267,7 @@ display: none;
     width: 118% !important;
 }
     .vertical-single-slide-10 .s-s-item.s11 {
-        z-index: 11;
+        z-index: 9999;
     }
 }
 

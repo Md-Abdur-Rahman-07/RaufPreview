@@ -238,7 +238,7 @@
     position: fixed;
     right: 0;
     top: 1.5em;
-    z-index: 31;
+    z-index: 9999;
     text-transform: uppercase;
     margin: 0;
     font-weight: 900;
@@ -693,7 +693,7 @@ main.dark .contact.indicator-button::after {
 }
 
 .s-s-item video {
-    /* background: #000; */
+    background: transparent;
 }
 
 @media screen and (max-width: 540px) {
@@ -1186,7 +1186,7 @@ main.dark .contact.indicator-button::after {
 
 .vertical-single-slide-10 .s-s-item.s9 * {
     top: 94.5%;
-    left: 3%;
+    left: 0%;
     transform: translate(0, -100%);
     width: 22%;
 }
@@ -1200,7 +1200,7 @@ main.dark .contact.indicator-button::after {
 
 .vertical-single-slide-10 .s-s-item.s11 * {
     top: -58%;
-    left: -27%;
+    left: -30%;
     transform: translate(0, 0);
     width: 100% !important;
 }
@@ -1212,8 +1212,13 @@ main.dark .contact.indicator-button::after {
 a.btn-git {
     display: none;
 }
-
+.v7-img{
+    display: none;
+}
 @media screen and (max-width: 540px) {
+    .v7-img{
+    display: block;
+}
     a.btn-git {
         display: block;
         padding: 12px 20px;
@@ -1289,9 +1294,7 @@ a.btn-git {
         display: none;
     }
 
-    .vertical-single-slide-10 .s-s-item.s6 video {
-        display: none;
-    }
+
 
 .vertical-single-slide-10 .s-s-item.s6 * {
     top: 11%;

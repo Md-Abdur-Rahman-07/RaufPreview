@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticky in Section Demo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    section {
+      min-height: 100vh;        /* each section is at least 1 screen tall */
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    /* Different backgrounds to see sections */
+    .section1 { background: #ffe6e6; }
+    .section2 { background: #e6ffe6; }
+    .section3 { background: #e6e6ff; }
+
+    .sticky-box {
+      position: sticky;
+      top: 0;                   /* sticks to top when scrolling */
+      background: #ff9800;
+      padding: 12px 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 10;
+    }
+
+    p {
+      margin: 20px 0;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="section1">
+    <div class="sticky-box">Section 1 - Sticky</div>
+    <p>Lots of text here... scroll down</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Curabitur nec eros non tortor fermentum varius.</p>
+    <p>Aliquam erat volutpat.</p>
+    <p>Fusce ullamcorper turpis at lacus tincidunt luctus.</p>
+    <p>Keep scrolling to see Section 2...</p>
+  </section>
+
+  <section class="section2">
+    <div class="sticky-box">Section 2 - Sticky</div>
+    <p>Scroll here too...</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Morbi sit amet sem eu libero blandit tincidunt.</p>
+    <p>Donec ac viverra nisl.</p>
+    <p>Sed at orci sed lorem varius fermentum.</p>
+    <p>Keep scrolling to see Section 3...</p>
+  </section>
+
+  <section class="section3">
+    <div class="sticky-box">Section 3 - Sticky</div>
+    <p>Keep scrolling...</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Ut nec urna eget arcu efficitur cursus.</p>
+    <p>Praesent ac mauris ut nibh feugiat faucibus.</p>
+    <p>Nunc vitae augue id nibh ullamcorper facilisis.</p>
+  </section>
+
+</body>
+</html>

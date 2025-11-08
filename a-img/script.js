@@ -61,7 +61,11 @@ document.addEventListener("DOMContentLoaded", ()=> {
     // Check if squiggle is inside about-section
     const isInAboutSection = aboutSection && aboutSection.contains(svg);
     
-    const scroll = () => {
+    // Throttle scroll updates using requestAnimationFrame for better Safari performance
+    let rafId = null;
+    let lastOffset = pathLength;
+    
+    const updatePath = () => {
         let distance, totalDistance;
         
         if (isInAboutSection && aboutSection) {
@@ -82,16 +86,26 @@ document.addEventListener("DOMContentLoaded", ()=> {
         // When percentage is 1 (bottom), offset is 0 (fully visible)
         const offset = pathLength * (1 - percentage);
         
-        // Update the strokeDashoffset on mask path to reveal the visible path
-        // Use both setAttribute and style for maximum browser compatibility
-        maskPath.setAttribute('stroke-dashoffset', offset);
-        maskPath.style.strokeDashoffset = `${offset}`;
+        // Only update if offset changed significantly (reduces repaints in Safari)
+        if (Math.abs(offset - lastOffset) > 0.5) {
+            // Use only style update for better Safari performance (avoid setAttribute)
+            maskPath.style.strokeDashoffset = `${offset}`;
+            lastOffset = offset;
+        }
         
+        rafId = null;
+    };
+    
+    const scroll = () => {
+        // Throttle with requestAnimationFrame for smooth performance
+        if (rafId === null) {
+            rafId = requestAnimationFrame(updatePath);
+        }
     };
     
     // Run the scroll function after a short delay to ensure layout is complete
     setTimeout(() => {
-        scroll();
+        updatePath();
     }, 300);
     
     // Add the scroll event listener to the appropriate container

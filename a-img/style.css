@@ -321,10 +321,12 @@
         z-index: 0;
         border-radius: 48px;
         opacity: 0;
+        transform: translateZ(0);
+        will-change: opacity;
 
-        transition: all 0.4s ease;
+        transition: opacity 0.3s ease;
         background: linear-gradient(180deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.95));
-        backdrop-filter: blur(100px);
+        backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 
@@ -361,7 +363,8 @@
         margin-top: 55%;
         margin-left: 1rem;
         margin-bottom: 0.5rem;
-        transition: all 0.4s ease;
+        transition: color 0.3s ease;
+        will-change: color;
 
     }
 
@@ -369,7 +372,8 @@
         font-size: 20px;
         line-height: 28px;
         margin: 0 3rem 1.5rem 1rem;
-        transition: all 0.4s ease;
+        transition: color 0.3s ease;
+        will-change: color;
 
     }
 
@@ -386,9 +390,11 @@
         text-align: center;
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
+        transform: translateZ(0);
+        will-change: background-color, border-color;
 
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .s-box:hover .icon-box {
@@ -415,6 +421,8 @@
 
     .stroke {
         stroke: black;
+        transition: stroke 0.3s ease;
+        will-change: stroke;
     }
 
     .s-box:hover .stroke {
@@ -423,6 +431,8 @@
 
     .fill {
         fill: black;
+        transition: fill 0.3s ease;
+        will-change: fill;
     }
 
     .s-box:hover .fill {
@@ -690,7 +700,7 @@
 
     svg.squiggle {
         position: absolute;
-        transform: translateX(-50%);
+        transform: translateX(-50%) translateZ(0);
         top: 0;
         left: 50%;
         width: 90%;
@@ -700,6 +710,7 @@
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
+        will-change: contents;
     }
 
     #visible-path {
@@ -708,6 +719,7 @@
         fill: none;
         stroke-dasharray: 10 10;
         stroke-linecap: round;
+        will-change: stroke-dashoffset;
     }
 
     #mask-path {
@@ -715,6 +727,8 @@
         stroke-width: 5;
         fill: none;
         stroke-linecap: round;
+        will-change: stroke-dashoffset;
+        transform: translateZ(0);
     }
 
     @media (max-width: 992px) {

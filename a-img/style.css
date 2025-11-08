@@ -32,7 +32,7 @@
         height: 100vh;
         overflow-y: auto;
         position: relative;
-        z-index: 999;
+        z-index: 30;
 
         scroll-behavior: smooth;
         scrollbar-width: none;
@@ -94,7 +94,7 @@
         overflow: hidden;
         position: relative;
         scroll-behavior: smooth;
-        z-index: 99;
+        z-index: 30;
         width: 100%;
 
 
@@ -707,12 +707,14 @@
         stroke-width: 3;
         fill: none;
         stroke-dasharray: 10 10;
+        stroke-linecap: round;
     }
 
     #mask-path {
         stroke: white;
         stroke-width: 5;
         fill: none;
+        stroke-linecap: round;
     }
 
     @media (max-width: 992px) {
